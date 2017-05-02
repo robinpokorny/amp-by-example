@@ -236,6 +236,7 @@ This sample showcases how to build a product page in AMP HTML.
       display: flex;
       align-items: center;
     }
+
     .ampTabContainer {
         display: flex;
         flex-wrap: wrap;
@@ -265,6 +266,10 @@ This sample showcases how to build a product page in AMP HTML.
 
     .tabButton[selected]+.tabContent {
         display: block;
+    }
+
+    .close-gallery-button {
+      float: right;
     }
     </style>
 
@@ -494,10 +499,14 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- ## Full screen image -->
     <!-- The `amp-image-lightbox` component allows the user to expand an image to fill the viewport.
     By clicking on each image from the product gallery, the user can see the product image by using the full screen.
-    Learn more [here](https://ampbyexample.com/components/amp-image-lightbox/) -->
+    Learn more [here](/components/amp-image-lightbox/) -->
     <amp-image-lightbox id="gallery-lightbox" layout="nodisplay">
-      <div class="lightbox" on="tap:gallery-lightbox.close" role="button"
+      <div on="tap:gallery-lightbox.close" role="button"
           tabindex="0">
+          <button class="ampstart-btn caps m2 close-gallery-button" on="tap:gallery-lightbox.close"
+            role="button" tabindex="0">
+            Close
+          </button>
       </div>
     </amp-image-lightbox>
 
